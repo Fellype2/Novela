@@ -17,6 +17,10 @@ titulos = [
 ]
 
 def gerar_sinopse():
+    """
+    Gera uma sinopse de novela aleatória com título, tema e local.
+    Retorna um dicionário com as chaves: 'título', 'tema', 'local' e 'sinopse'.
+    """
     titulo = random.choice(titulos)
     tema = random.choice(temas)
     local = random.choice(locais)
