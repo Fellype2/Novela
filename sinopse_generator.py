@@ -1,19 +1,16 @@
-# -*- coding: utf-8 -*-
 import random
 
+# Listas de temas, locais e títulos
 temas = [
-    "fé", "vingança", "perdão", "ambição", "segredos de família", "amor proibido",
-    "conversão religiosa", "mundo gospel", "sucesso e queda", "dupla identidade"
+    "fé", "vingança", "perdão", "ambição", "conversão religiosa", "mundo gospel"
 ]
-
 locais = [
-    "sertão nordestino", "subúrbio do Rio de Janeiro", "bairro evangélico de São Paulo",
-    "cidade fictícia envolta em mistérios", "vilarejo à beira-mar", "favela carioca"
+    "sertão nordestino", "subúrbio carioca", "bairro evangélico de São Paulo",
+    "cidade fictícia envolta em mistério"
 ]
-
 titulos = [
-    "A Promessa", "Entre a Cruz e o Pecado", "Luz do Sertão", "Terra de Milagres",
-    "Caminhos de Ester", "Flor de Fé", "O Último Culto"
+    "A Promessa", "Entre a Cruz e o Pecado", "Caminhos de Ester", "Flor de Fé",
+    "Terra de Milagres"
 ]
 
 def gerar_sinopse():
@@ -35,9 +32,12 @@ def gerar_sinopse():
         "sinopse": trama
     }
 
-if __name__ == "__main__":
-    novela = gerar_sinopse()
-    print("🎬 TÍTULO:", novela["título"])
-    print("📌 TEMA:", novela["tema"])
-    print("📍 LOCAL:", novela["local"])
-    print("\n📝 SINOPSE:", novela["sinopse"])
+def gerar_varias_sinopses(qtd=1):
+    """
+    Gera uma lista com várias sinopses de novelas.
+    Parâmetro:
+    - qtd: número de sinopses a serem geradas (padrão = 1)
+    
+    Retorna uma lista de dicionários com sinopses.
+    """
+    return [gerar_sinopse() for _ in range(qtd)]
